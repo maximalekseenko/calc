@@ -52,14 +52,11 @@ class Act_Main(Act):
             self.Update()
 
         elif event.type == pygame.KEYDOWN:
-            # numbers
-            if event.unicode in ['0','1','2','3','4','5','6','7','8','9','%','*','/','-','+',' ']:
-                self.Add_To_Line(event.unicode)
-            elif event.unicode in ['\x08']:
-                self.Remove_From_Line()
-            elif event.unicode in ['=', '\r']:
-                self.Resolve_Line()
-            else: print(event)
+            print(event)
+            self.Button_Click(event.unicode)
+        
+        else:
+            self.scene_input.Handle(event)
 
 
     def On_Render(self) -> None:
@@ -68,6 +65,25 @@ class Act_Main(Act):
 
         self.scene_input.Render()
         self.surface.blit(self.scene_input.surface, self.scene_input.rect)
+
+
+    def Button_Click(self, unicode:str):
+            # numbers
+            if unicode in ['0','1','2','3','4','5','6','7','8','9','%','*','/','-','+',' ']:
+                self.Add_To_Line(unicode)
+            elif unicode in ['\x08']:
+                self.Remove_From_Line()
+            elif unicode in ['=', '\r']:
+                self.Resolve_Line()
+            elif unicode in ['\x1b']:
+                pass# TODO : EXIT
+            elif unicode in ['\x7f']:
+                self.line = ""
+                self.scene_output.Update()
+            elif unicode in ['a']:
+                self.line += str(self.memory)
+                self.scene_output.Update()
+            else: print(unicode)
 
 
     def Add_To_Line(self, char:str):
@@ -112,12 +128,11 @@ class Act_Main(Act):
         # eval the line
         result = None
         try:
-            print(f"result = {self.line}")
             result = eval(self.line)
             self.memory = result
             self.line = str(result)
-        except Exception as e:
-            self.line = "ERR " + str(e)
+        except:
+            self.line = "ERR"
             
         self.scene_output.Update()
 
