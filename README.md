@@ -1,45 +1,43 @@
-# **Calculator on custon engine**
+# **Calculator, based on custon engine**
 
 ---
 
-## **Goal**
-Goal of this project is to test effectiveness of my development and programming skills.
+## **That the is this**
+This project is a proof-of-concept of my [engine project](https://github.com/maximalekseenko/pygame-based-engine) by creating a simple calculator.
 
 ---
 
-## **How the does this works**
-Lets start with the base of the project - engine.
-My engine provides me with next usefull elements: **Theatre**, **Act**, **Scene** and **Element**.
+## **Structure**
+Explanation of basic terms can be found [here](https://github.com/maximalekseenko/pygame-based-engine/blob/master/README.md).
 
-> <h3 align="center"> Theatre </h3>
+> <h3 align="center"> Theatre - theatre </h3>
 >
 > ---
 >
-> **Theatre** is the heart of the program. It handle all requests and global game managment. **Theatre** should also used to handle logic and hold data that may be requaired at any time of the program running (e.g. settings)
->
-> ---
-> 
-> Take a look at usefull components of the **Theatre**:
-> 
-> - `.current_act` - **act** that is currently playing. By setting other **act**, `.Close()` will be called  for previous **act**, and `.Open()` for a new one.
-> - `.Begin()` - function to run the main loop (! this functions finishes only after program finishes).
-> - `.is_running` - boolean that is used to exit the main loop.
+> Defalut **theatre** will be used, as i dont need to save anything globaly.
+
+> <h3 align="center"> Act - Main </h3>
 >
 > ---
 >
-> **Theatre** can be used as it is by writing next lines of code in `main.py`:
-> ```py
-> from engine import Theatre
-> theatre = Theatre()
+> As this is just a calculator, no other **act**s meems to be requaired.
 >
-> from mainmenu import Main_Menu_Act
-> theatre.current_act = Main_Menu_Act()
-> 
-> theatre.Begin() 
-> ```
-> But i highly suggest to expand **theatre** for bigger projects.
+> This will contain two **scene**s: one for input; one for output.
 
-> <h3 align="center"> Act </h3>
+> <h3 id="scene_keypad", align="center"> Scene - Keypad </h3>
 >
-> **Act**
+> ---
+>
+> Input **scene**. Contains buttons with numbers, operations and specal actions(e.g. erace)
 
+> <h3 align="center"> Scene - Screen </h3>
+>
+> ---
+>
+> Output **scene**. Contains a row of text to show current input or a final result.
+
+> <h3 align="center"> Element - Button </h3>
+>
+> ---
+>
+> **Element** for button in [Keypad **scene**](#scene_keypad). Will have highlight logic.
