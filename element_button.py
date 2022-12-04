@@ -9,7 +9,7 @@ class Element_Button(Element):
         super().__init__(scene)
 
         # for snippets
-        from .scene_input import Scene_Input
+        from scene_input import Scene_Input
         self.scene:Scene_Input
 
         # init data

@@ -9,9 +9,9 @@ class Act_Main(Act):
         super().__init__()
 
         # scenes
-        from scene_output.scene_output import Scene_Output
+        from scene_output import Scene_Output
         self.scene_output:Scene_Output = Scene_Output(self, None)
-        from scene_input.scene_input import Scene_Input
+        from scene_input import Scene_Input
         self.scene_input:Scene_Input = Scene_Input(self, None)
 
         # other
