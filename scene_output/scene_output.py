@@ -16,7 +16,7 @@ class Scene_Output(Scene):
     
     def On_Update(self):
         self.text_surf = theatre.font.render(self.act.line, 1, theatre.colors[4])
-        self.text_rect = self.text_surf.get_rect(center = self.rect.center)
+        self.text_rect = self.text_surf.get_rect(midright = self.rect.midright)
 
 
     def On_Render(self) -> None:
