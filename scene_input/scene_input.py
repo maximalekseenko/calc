@@ -16,7 +16,7 @@ class Scene_Input(Scene):
         # buttons
         from .element_button import Element_Button
         self.buttons:list[list[Element_Button]] = [
-            [Element_Button(self, "AC", '\x7f'),    Element_Button(self, "BCS", '\x08'),Element_Button(self, "%", '%'),     Element_Button(self, "/", '/')],
+            [Element_Button(self, "AC", '\x7f'),    Element_Button(self, "BS", '\x08'),Element_Button(self, "%", '%'),     Element_Button(self, "/", '/')],
             [Element_Button(self, "7", '7'),        Element_Button(self, "8", '8'),     Element_Button(self, "9", '9'),     Element_Button(self, "*", '*')],
             [Element_Button(self, "4", '4'),        Element_Button(self, "5", '5'),     Element_Button(self, "6", '6'),     Element_Button(self, "-", '-')],
             [Element_Button(self, "1", '1'),        Element_Button(self, "2", '2'),     Element_Button(self, "3", '3'),     Element_Button(self, "+", '+')],
