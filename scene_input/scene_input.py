@@ -1,4 +1,5 @@
 import pygame
+from theatre import theatre
 from engine import Scene
 
 
@@ -24,18 +25,21 @@ class Scene_Input(Scene):
 
     
     def On_Update(self):
-        if self.surface.get_width() / len(self.buttons[0]) < self.surface.get_height() / len(self.buttons):
-            buttonsize = self.surface.get_width() / len(self.buttons[0])
-        else:
-            buttonsize = self.surface.get_height() / len(self.buttons)
+        buttonheight = self.surface.get_height() / len(self.buttons)
+        buttonwidth = self.surface.get_width() / len(self.buttons[0])
+        firstleft = 0
+
+        # buttonheight = self.surface.get_height() / len(self.buttons)
+        # buttonwidth = buttonheight
+        # firstleft = self.rect.centerx - len(self.buttons) / 2 * buttonwidth + buttonwidth / 2
 
         for y in range(len(self.buttons)):
             for x in range(len(self.buttons[y])):
                 self.buttons[y][x].rect = pygame.Rect(
-                    x * buttonsize,
-                    y * buttonsize,
-                    buttonsize,
-                    buttonsize)
+                    x * buttonwidth + firstleft,
+                    y * buttonheight,
+                    buttonwidth,
+                    buttonheight)
                 self.buttons[y][x].Update()
 
 
@@ -46,7 +50,7 @@ class Scene_Input(Scene):
 
 
     def On_Render(self) -> None:
-        self.surface.fill("#000000")
+        self.surface.fill(theatre.colors[0])
 
         for buttonrow in self.buttons:
             for button in buttonrow:
