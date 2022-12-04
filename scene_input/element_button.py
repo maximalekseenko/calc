@@ -1,4 +1,5 @@
 import pygame
+from theatre import theatre
 from engine import Element
 
 
@@ -15,13 +16,12 @@ class Element_Button(Element):
         self.text = text
         self.click_unicode = click_unicode
 
-        # font and flags
-        self.font = pygame.font.Font(None, 30)
+        # highlight
         self.is_highlighted = False
 
     
     def On_Update(self):
-        self.text_surface = self.font.render(self.text, 1, "#505050")
+        self.text_surface = theatre.font_none_30.render(self.text, 1, "#505050")
         self.text_rect = self.text_surface.get_rect(centerx=self.rect.width / 2, centery=self.rect.height / 2)
 
 

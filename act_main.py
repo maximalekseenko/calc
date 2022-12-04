@@ -120,7 +120,7 @@ class Act_Main(Act):
 
         # validate the line
         for char in self.line:
-            if char not in ['0','1','2','3','4','5','6','7','8','9','%','*','/','-','+',' ']:
+            if char not in ['0','1','2','3','4','5','6','7','8','9','%','*','/','-','+',' ','.']:
                 self.line = "ERR"
                 self.scene_output.Update()
                 return

@@ -1,4 +1,5 @@
 import pygame
+from theatre import theatre
 from engine import Scene
 
 
@@ -12,12 +13,9 @@ class Scene_Output(Scene):
         from act_main import Act_Main
         self.act:Act_Main
 
-        # other
-        self.font = pygame.font.Font(None, 30)
-
     
     def On_Update(self):
-        self.text_surf = self.font.render(self.act.line, 1, "#10b050")
+        self.text_surf = theatre.font_dseg7_30.render(self.act.line, 1, "#10b050")
         self.text_rect = self.text_surf.get_rect(center = self.rect.center)
 
 

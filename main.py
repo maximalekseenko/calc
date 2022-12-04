@@ -1,7 +1,8 @@
-from engine import Theatre
-theatre = Theatre()
+from theatre import theatre
 
-from act_main import Act_Main
-theatre.current_act = Act_Main()
 
-theatre.Begin()
+if __name__ == "__main__":
+    from act_main import Act_Main
+    theatre.current_act = Act_Main()
+
+    theatre.Begin()
