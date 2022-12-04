@@ -21,7 +21,7 @@ class Element_Button(Element):
 
     
     def On_Update(self):
-        self.text_surface = theatre.font_none_30.render(self.text, 1, "#505050")
+        self.text_surface = theatre.font.render(self.text, 1, theatre.colors[0])
         self.text_rect = self.text_surface.get_rect(centerx=self.rect.width / 2, centery=self.rect.height / 2)
 
 
@@ -39,15 +39,15 @@ class Element_Button(Element):
 
         # fill
         if self.is_highlighted:
-            self.surface.fill("#a0a0a0")
+            self.surface.fill(theatre.colors[3])
         else:
-            self.surface.fill("#b0b0b0")
+            self.surface.fill(theatre.colors[2])
 
         # text
         self.surface.blit(self.text_surface, self.text_rect)
 
         # border
-        pygame.draw.rect(self.surface, "#909090", (0,0,*self.rect.size), 1,)
+        pygame.draw.rect(self.surface, theatre.colors[1], (0,0,*self.rect.size), 1,)
 
         # add to parent
         target.blit(self.surface, self.rect)

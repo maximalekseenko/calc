@@ -121,7 +121,7 @@ class Act_Main(Act):
         # validate the line
         for char in self.line:
             if char not in ['0','1','2','3','4','5','6','7','8','9','%','*','/','-','+',' ','.']:
-                self.line = "ERR"
+                self.line = "&"
                 self.scene_output.Update()
                 return
         
@@ -132,7 +132,7 @@ class Act_Main(Act):
             self.memory = result
             self.line = str(result)
         except:
-            self.line = "ERR"
+            self.line = "&"
             
         self.scene_output.Update()
 
