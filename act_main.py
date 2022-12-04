@@ -1,4 +1,5 @@
 import pygame
+from theatre import theatre
 from engine import Act
 
 
@@ -76,7 +77,7 @@ class Act_Main(Act):
             elif unicode in ['=', '\r']:
                 self.Resolve_Line()
             elif unicode in ['\x1b']:
-                pass# TODO : EXIT
+                theatre.is_running = False
             elif unicode in ['\x7f']:
                 self.line = ""
                 self.scene_output.Update()
