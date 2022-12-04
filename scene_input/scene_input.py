@@ -29,10 +29,6 @@ class Scene_Input(Scene):
         buttonwidth = self.surface.get_width() / len(self.buttons[0])
         firstleft = 0
 
-        # buttonheight = self.surface.get_height() / len(self.buttons)
-        # buttonwidth = buttonheight
-        # firstleft = self.rect.centerx - len(self.buttons) / 2 * buttonwidth + buttonwidth / 2
-
         for y in range(len(self.buttons)):
             for x in range(len(self.buttons[y])):
                 self.buttons[y][x].rect = pygame.Rect(
@@ -50,7 +46,7 @@ class Scene_Input(Scene):
 
 
     def On_Render(self) -> None:
-        self.surface.fill(theatre.colors[0])
+        self.surface.fill(theatre.colors[1])
 
         for buttonrow in self.buttons:
             for button in buttonrow:
