@@ -117,40 +117,80 @@ Input is the second major part of the [interface](#interface). located at the lo
 >
 > Button with nothing is not implemented.
 
-
 ---
 
-## **Structure**
-Explanation of basic terms can be found [here](https://github.com/maximalekseenko/pygame-based-engine/blob/master/README.md).
+## **Inner structure**
+This project posesses nest structure:
+- [engine](#engine) - core of the project.
+- [font.ttf](#fontttf) - font.
+- [readme.md](#readmemd) - documentation.
+- [theatre.py](#theatrepy) - heart of the application.
+- act_main.py - python file with main act.
+- scene_output.py - python file with [output](#output).
+- scene_input.py - python file with [input](#input).
+- element_button.py - buttons.
+- run.py - python file for running this application.
 
-> <h3 align="center"> Theatre - theatre </h3>
+> ### Engine
+> Folder with engine, this project made on.
 >
-> ---
->
-> Defalut **theatre** will be used, as i dont need to save anything globaly.
+> Source code can be found [here](https://github.com/maximalekseenko/pygame-based-engine).
 
-> <h3 align="center"> Act - Main </h3>
+> ### font.ttf
+> File, that contains seven segment font.
 >
-> ---
+> Used by [display](#display) and [numpad](#numpad).
 >
-> As this is just a calculator, no other **act**s meems to be requaired.
+> Source code can be found [here](https://www.dafont.com/seven-segment.font).
 >
-> This will contain two **scene**s: one for input; one for output.
+> Readed by [theatre](#theatrepy) upon initilization.
 
-> <h3 id="scene_keypad", align="center"> Scene - Keypad </h3>
+> ### readme.md
+> File with documentation for this project.
 >
-> ---
+> Used for understanding how to use this application and how it works.
 >
-> Input **scene**. Contains buttons with numbers, operations and specal actions(e.g. erace)
+> Beginig can be found [here](#calculator-based-on-custon-engine).
 
-> <h3 align="center"> Scene - Screen </h3>
+> ### theatre.py
+> Heart of the 
 >
-> ---
+> Used for..
 >
-> Output **scene**. Contains a row of text to show current input or a final result.
+> Located in...
 
-> <h3 align="center"> Element - Button </h3>
+> ### name.type
+> This is...
 >
-> ---
+> Used for..
 >
-> **Element** for button in [Keypad **scene**](#scene_keypad). Will have highlight logic.
+> Located in...
+
+> ### name.type
+> This is...
+>
+> Used for..
+>
+> Located in...
+
+> ### name.type
+> This is...
+>
+> Used for..
+>
+> Located in...
+
+> ### name.type
+> This is...
+>
+> Used for..
+>
+> Located in...
+
+> ### name.type
+> This is...
+>
+> Used for..
+>
+> Located in...
+
