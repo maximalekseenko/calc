@@ -253,3 +253,13 @@ This project posesses nest structure:
 - Scaling window to small.
 - Scaling window to big.
 - Typing two [numbers](#buttons-with-numbers) at the same time.
+
+# Testing log
+| № | User action | Expected result | Real result | Comments |
+|-|-|-|-|-|
+| 1 | Hitting [4](#buttons-with-numbers), when `163+62` in [display](#display) | display shows `163+624` | display shows `163+624` | - |
+| 2 | Hitting [=](#button-with-equal), when `163+62` in display | display shows `225` | display shows `225` | - |
+| 3 | Hitting [AC](#button-with-ac), when `163+62` in display | display shows ` ` | display shows ` ` | - |
+| 4 | Hitting [OFF](#button-with-off), when `163+62` in display | Programm quites | Programm quites | - |
+| 5 | Hitting =, when `163+` in display | display shows `&` | Infinity or zero | Division by zero |
+| 6 | Hitting wall with your device, when `163+62` in display | display shows ` ` | display shows `163+62` | Technical problems |
