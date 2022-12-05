@@ -244,3 +244,12 @@ This project posesses nest structure:
 
 > ### Clear the result
 > When calcutaion is [done](#button-with-equal), [display](#display) will preview the result. There is no need of editing the tesult by user, as there is [memory feature](#memory). Upon [adding](#buttons-with-numbers) any new symbol to the display, previewed result eraces at first.
+
+# What this code is protected against
+- Pressing [=](#button-with-equal) with incorrect line in [display](#display).
+- Pressing [AC](#button-with-ac) when line in display is empty.
+- Division by zero.
+- Modulo by zero.
+- Scaling window to small.
+- Scaling window to big.
+- Typing two [numbers](#buttons-with-numbers) at the same time.
