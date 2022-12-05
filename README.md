@@ -218,7 +218,24 @@ This project posesses nest structure:
 >
 > Upon execution initilizes the [theatre](#theatrepy) by `theatre.Begin()`.
 
+---
 
+# **Algorythm of work**
+1. [run.py](#runpy):
+    - Initilize theatre on import from [theatre.py](#theatrepy).
+    - Set `theatre.current_act` to [main act](#act_mainpy).
+    - Call `theatre.Bengin()`.
+2. `act.Handle()`:
+    - If it is window resize, update window elements.
+    - If it is button press, call `act.Button_Click()` with this button.
+    - Else pass into [input scene](#scene_inputpy).
+3. `act.Render()`:
+    - Render [output scene](#scene_outputpy).
+    - Render `input scene`.
+4. `element_button.Handle()`:
+    - if event is mouse moution and if event position is within this button, then highlight this button.
+    - if event is mousebutton press and if event position is within this button, then call corresponting `act.Button_Click()`.
+    
 ---
 
 # **Features**
