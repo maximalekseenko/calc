@@ -260,4 +260,4 @@ This project posesses nest structure:
 | 3 | Hitting [AC](#button-with-ac), when `163+62` in display | display shows ` ` | display shows ` ` | - |
 | 4 | Hitting [OFF](#button-with-off), when `163+62` in display | Programm quites | Programm quites | - |
 | 5 | Hitting =, when `163+` in display | display shows `&` | Infinity or zero | Division by zero |
-| 6 | Hitting wall with your device, when `163+62` in display | display shows ` ` | display shows `163+62` | Technical problems |
+| 6 | Hitting wall with your device, when `163+62` in display | display shows `163+62` | display shows ` ` | Technical problems |
