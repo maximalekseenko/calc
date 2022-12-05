@@ -1,13 +1,11 @@
 # **Calculator, based on custon engine**
 
 ## **That the is this**
-This is a simple calculator, based on my [engine](https://github.com/maximalekseenko/pygame-based-engine).
+Core idea of this project is to practice in project development.
 
-It withholds next features:
-- [Numpad](#numpad) with 20 unique buttons for you to press on.
-- [Display](#display) that shows your current input or result of your calculations.
-- [Interface](#interface), that is prepaired for the most extreme screen sizes.
-- [Easy way](#memory) for continueous calculatations.
+This project is an application, that immitates calculator.
+
+Base of this application is [pygame based engine](https://github.com/maximalekseenko/pygame-based-engine).
 
 ---
 
