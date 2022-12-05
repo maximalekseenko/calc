@@ -11,6 +11,16 @@ It withholds next features:
 
 ---
 
+# Installation
+For running thip program you will need:
+ - [python 3.10+](http://python.org)
+ - [pygame 2.1+](http://pygame.org)
+ - [git](https://git-scm.com) or [zip with this project](https://github.com/maximalekseenko/calc)
+
+Run this program by simply running '`run.py`' with your [python interpritator](http://python.org).
+
+---
+
 # **Interface**
 Interface is easily seperated on two parts:
 - [Output](#output) - Located at top of the screen and used for witnessing your input or program output.
@@ -36,7 +46,7 @@ Output consists of single element:
 ---
 
 ## **Input**
-Input is the second major part of the [interface](#interface). located at the lower two third of the screen. It contans matrix of buttons. Used for translating your request manualy by operating with your mouse. It is valueable to notice ability to input by [keyboard](#keyboad-input).
+Input is the second major part of the [interface](#interface). located at the lower two third of the screen. It contans matrix of buttons. Used for translating your request manualy by operating with your mouse. It is valueable to notice ability to input by [keyboard](#keyboard-input).
 
 **Input** consists of 20 buttons that are located in [numpad](#numpad).
 
@@ -68,6 +78,25 @@ Input is the second major part of the [interface](#interface). located at the lo
 >
 > Button with a dot is located in [numpad](#numpad-layout).
 
+> ### **Buttons with operations**
+> Five rectangular button that spells one of the baisic operations (e.g. '`%`', '`/`', '`+`'). 
+>
+> By pressing any of such buttons, corresponding operaion will be added to the [display](#display).
+>
+> Legacy of this buttons:
+> - '`%`' - modulo.
+> - '`/`' - division (tip: type twice to get an integer division).
+> - '`*`' - multyplication.
+> - '`-`' - subtraction.
+> - '`+`' - addition
+
+> ### **Button with equal**
+> Single rectangular button that spells '`=`'. 
+>
+> By pressing this button, line of symbols in the [display](#display) will be replaced with a result of previously inputed operations(s).
+>
+> Button with a dot is located in [numpad](#numpad-layout).
+
 > ### **Button with AC**
 > Single rectangular button that spells '`AC`'. 
 >
@@ -81,18 +110,6 @@ Input is the second major part of the [interface](#interface). located at the lo
 > By pressing this button, last symbol in [display](#display) will be removed.
 >
 > Button with BS is located in [numpad](#numpad-layout).
-
-> ### **Buttons with operations**
-> Five rectangular button that spells one of the baisic operations (e.g. '`%`', '`/`', '`+`'). 
->
-> By pressing any of such buttons, corresponding operaion will be added to the [display](#display).
->
-> Legacy of this buttons:
-> - '`%`' - modulo.
-> - '`/`' - division (tip: type twice to get an integer division).
-> - '`*`' - multyplication.
-> - '`-`' - subtraction.
-> - '`+`' - addition
 >
 > Buttons with operations is located in [numpad](#numpad-layout).
 
@@ -108,35 +125,35 @@ Input is the second major part of the [interface](#interface). located at the lo
 >
 > By pressing this button, last calculation result will be added to the [display](#display). If no calculations were made yet, '`0`' will be added instead.
 >
-> Button with ANS is not impemented.
+> Button with ANS is not impemented on the [numpad](#numpad-layout). Can be used throught [keyboard](#keyboard-input).
 
 > ### **Button with nothing**
 > Single rectangular button that spells '` `' (space symbol). 
 >
 > By pressing this button, '` `' symbol will be added to the [display](#display).
 >
-> Button with nothing is not implemented.
+> Button with nothing is not impemented on the [numpad](#numpad-layout). Can be used throught [keyboard](#keyboard-input).
 
 ---
 
-## **Inner structure**
+# **Inner structure**
 This project posesses nest structure:
 - [engine](#engine) - core of the project.
 - [font.ttf](#fontttf) - font.
 - [readme.md](#readmemd) - documentation.
 - [theatre.py](#theatrepy) - heart of the application.
-- act_main.py - python file with main act.
-- scene_output.py - python file with [output](#output).
-- scene_input.py - python file with [input](#input).
-- element_button.py - buttons.
-- run.py - python file for running this application.
+- [act_main.py](#act_mainpy) - python file with main act.
+- [scene_output.py](#scene_outputpy) - python file with [output](#output).
+- [scene_input.py](#scene_inputpy) - python file with [input](#input).
+- [element_button.py](#element_buttonpy) - buttons.
+- [run.py](#runpy) - python file for running this application.
 
-> ### Engine
+> ### **engine**
 > Folder with engine, this project made on.
 >
 > Source code can be found [here](https://github.com/maximalekseenko/pygame-based-engine).
 
-> ### font.ttf
+> ### **font.ttf**
 > File, that contains seven segment font.
 >
 > Used by [display](#display) and [numpad](#numpad).
@@ -145,52 +162,85 @@ This project posesses nest structure:
 >
 > Readed by [theatre](#theatrepy) upon initilization.
 
-> ### readme.md
+> ### **readme.md**
 > File with documentation for this project.
 >
 > Used for understanding how to use this application and how it works.
 >
 > Beginig can be found [here](#calculator-based-on-custon-engine).
 
-> ### theatre.py
-> Heart of the 
+> ### **theatre.py**
+> Heart of the project.
 >
-> Used for..
+> Contains extended thearte and it's initialization.
 >
-> Located in...
+> Extended theatre has two new variables:
+> - `.font` - font, for this programm. Within initialization, reads it from [fontttf](#fontttf).
+> - `.colors` - list of colors for program.
 
-> ### name.type
-> This is...
+> ### **act_main.py**
+> This act represents program in open state.
 >
-> Used for..
+> This act withholds next vatiables:
+> - `.is_preview` - [is currently shows a result](#clear-the-result).
+> - `.line` - [display](#display);
+> - `.memory` - [menory](#memory)
 >
-> Located in...
+> This act has two scenes:
+> - `.scene_output` - instance of [output scene](#scene_outputpy)
+> - `.scene_input` - instance of [input scene](#scene_inputpy)
+>
+> Initialized and added to the [theatre](#theatrepy) in the [run.py](#runpy)
 
-> ### name.type
-> This is...
+> ### **scene_output.py**
+> Scene for upper part of the screen.
 >
-> Used for..
+> Is implementation of [output](#output).
 >
-> Located in...
+> Used in [main act](#act_mainpy).
 
-> ### name.type
-> This is...
+> ### **scene_input.py**
+> Scene for lower part of the screen.
 >
-> Used for..
+> Is implementation of [input](#input).
+> 
+> withhold matrix of [buttons](#element_buttonpy) '`.buttons`' as implementation of [numpad](#numpad).
 >
-> Located in...
+> Used in [main act](#act_mainpy).
 
-> ### name.type
-> This is...
+> ### **element_button.py**
+> Buttons.
 >
-> Used for..
+> Is implementation of buttons in [numpad](#numpad-layout).
 >
-> Located in...
+> Matrix of such located in [input scene](#scene_inputpy).
 
-> ### name.type
-> This is...
+> ### **run.py**
+> This is file for running the program
 >
-> Used for..
->
-> Located in...
+> Upon execution initilizes the [theatre](#theatrepy) by `theatre.Begin()`.
 
+
+---
+
+# **Features**
+> ### **Keyboard input**
+> Aside of manual input, this program has an ability to input by keyboard.
+>
+> | Key                                              | Button                                             |
+> |--------------------------------------------------|----------------------------------------------------|
+> | `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9` | [buttons with numbers](#buttons-with-numbers)      |
+> | `.`                                              | [button with a dot](#button-with-a-dot)            |
+> | `%`, `/`, `*`, `-`, `+`                          | [button with operations](#buttons-with-operations) |
+> | `=`, `enter`                                     | [button with equal](#button-with-equal)            |
+> | `delete`                                         | [button with AC](#button-with-ac)                  |
+> | `backspace`                                      | [button with BS](#button-with-bs)                  |
+> | `escape`                                         | [button with OFF](#button-with-off)                |
+> | `a`                                              | [button with ANS](#button-with-ans)                |
+> | `space`                                          | [button with nothing](#button-with-nothing)        |
+
+> ### **Memory**
+> After calculation this program saves final result to memory, wich can be accessed by [ANS button](#button-with-ans)
+
+> ### Clear the result
+> When calcutaion is [done](#button-with-equal), [display](#display) will preview the result. There is no need of editing the tesult by user, as there is [memory feature](#memory). Upon [adding](#buttons-with-numbers) any new symbol to the display, previewed result eraces at first.
